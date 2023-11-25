@@ -1,0 +1,15 @@
+version: '3'
+services:
+  tor-privoxy:
+    image: dockage/tor-privoxy
+    container_name: tor-privoxy
+    restart: always
+    ports:
+      - 9050:9050
+      - 9051:9051
+      - 8118:8118
+    networks:
+      - tor-network
+networks:
+  tor-network:
+    driver: bridge
